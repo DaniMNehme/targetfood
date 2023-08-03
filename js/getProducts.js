@@ -255,7 +255,7 @@ fetch("https://aesthetic-eclair-56d00c.netlify.app/.netlify/functions/api/produc
         productElem.innerHTML = `
         <div class="card-box-a card-shadow">
           <div class="img-box-a">
-            <img src="images/3.png" alt="" class="img-a img-fluid">
+            <img src="${product.image}" alt="" class="img-a img-fluid">
           </div>
           <div class="card-overlay">
             <div class="card-overlay-a-content">
