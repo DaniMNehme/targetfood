@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
             productElem.innerHTML = `
               <div class="card-box-a card-shadow">
                 <div class="img-box-a">
-                  <img src="images/1.png" alt="" class="img-a img-fluid">
+                  <img src="${product.image}" alt="" class="img-a img-fluid">
                 </div>
                 <div class="card-overlay">
                   <div class="card-overlay-a-content">
