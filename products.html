@@ -1,57 +1,31 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>EstateAgency Bootstrap Template</title>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <meta content="" name="keywords">
-  <meta content="" name="description">
-
-  <!-- Favicons -->
-  <link href="img/logo.png" rel="icon">
-  <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
-
-  <!-- Bootstrap CSS File -->
-  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-  <!-- Libraries CSS Files -->
-  <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-  <link href="lib/animate/animate.min.css" rel="stylesheet">
-  <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
-  <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-
-
-  <!-- Main Stylesheet File -->
-  <link href="css/style.css" rel="stylesheet">
-
-  <!-- =======================================================
-    Theme Name: EstateAgency
-    Theme URL: https://bootstrapmade.com/real-estate-agency-bootstrap-template/
-    Author: BootstrapMade.com
-    License: https://bootstrapmade.com/license/
-  ======================================================= -->
-
-  <title>Target Food</title>
+<title>About us</title>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="description" content="Target Food">
+<meta name="description" content="Target Food template project">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="styles/bootstrap-4.1.2/bootstrap.min.css">
 <link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.carousel.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
 <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
 <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/animate.css">
-<link href="plugins/colorbox/colorbox.css" rel="stylesheet" type="text/css">
 <link href="plugins/jquery-datepicker/jquery-ui.css" rel="stylesheet" type="text/css">
 <link href="plugins/jquery-timepicker/jquery.timepicker.css" rel="stylesheet" type="text/css">
-<link rel="stylesheet" type="text/css" href="styles/main_styles.css">
-<link rel="stylesheet" type="text/css" href="styles/responsive.css">
+<link rel="stylesheet" type="text/css" href="styles/about.css">
+<link rel="stylesheet" type="text/css" href="styles/about_responsive.css">
 
+
+
+
+
+ <!-- Bootstrap CSS File -->
+ <!-- <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet"> -->
+
+ <!-- Libraries CSS Files -->
  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
  <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
  <link href="lib/animate/animate.min.css" rel="stylesheet">
@@ -73,11 +47,36 @@
  <script src="lib/owlcarousel/owl.carousel.min.js"></script>
  <script src="lib/isotope/isotope.pkgd.min.js"></script>
  <script src="lib/lightbox/js/lightbox.min.js"></script> 
+ <!-- Template Main Javascript File -->
+
+ <script>
+  // JQuery to hide the loader after page is fully loaded
+  $(window).on('load', function(){
+    $('.loader-wrapper').fadeOut('slow');
+  });
+</script>
+
+<style>
+  .box {
+    width: 300px;
+    height: 200px;
+    border: 1px solid white;
+    margin: 10px;
+    padding: 20px;
+  }
+</style>
 </head>
 
 <body>
+  <div id="loader" style="display: block; position: fixed; left: 0; top: 0; z-index: 1000; width: 100vw; height: 100vh; background-color: rgba(255,255,255,0.8); pointer-events: none;">
+    <img src="loader.gif" alt="Loading..." style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+  </div>
+  
+<div class="super_container">
+	
+	<!-- Header -->
 
-  <header class="header">
+	<header class="header">
 		<div class="container">
 			<div class="row">
 				<div class="col">
@@ -95,8 +94,7 @@
 								<li><a href="index.html">home</a></li>
 								<li><a href="about.html">about us</a></li>
 								<li><a href="brands.html">brands</a></li>
-								<!-- <li><a href="menu.html">menu</a></li> -->
-								
+                <li><a href="products.html">products</a></li>
 								<li><a href="blog.html">blog</a></li>
 								<li><a href="contact.html">contact</a></li>
 							</ul>
@@ -161,7 +159,7 @@
 	</div>
   
 
-  <section class="intro-single">
+  <!-- <section class="intro-single">
     <div class="container">
       <div class="row">
         <div class="col-md-12 col-lg-8">
@@ -170,22 +168,34 @@
             <span class="color-text-a">Our large range of Products</span>
           </div>
         </div>
-        <div class="col-md-12 col-lg-4">
-          <nav aria-label="breadcrumb" class="breadcrumb-box d-flex justify-content-lg-end">
-            <ol class="breadcrumb">
-              <li class="breadcrumb-item">
-                <a href="#">Home</a>
-              </li>
-              <li class="breadcrumb-item active" aria-current="page">
-                Products
-              </li>
-            </ol>
-          </nav>
-        </div>
+
       </div>
     </div>
-  </section>
+  </section> -->
 
+  <div class="intro">
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<div class="intro_content">
+						<!-- <div class="intro_subtitle page_subtitle">Something new</div> -->
+						<div class="intro_title"><h2>Our Products</h2></div>
+						<div class="intro_text">
+							<p>We boast a broad spectrum of top-quality food and non-food products from around the world, fulfilling the diverse needs of Lebanese consumers.</p>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-xl-4 col-md-6 intro_col">
+							<div class="intro_image"><img src="images/thecompany/11.jpeg" alt="https://unsplash.com/@quanle2819"></div>
+						</div>
+						<div class="col-xl-4 col-md-6 intro_col">
+							<div class="intro_image"><img src="images/thecompany/46.jpeg" alt="https://unsplash.com/@fabmag"></div>
+						</div>
+					</div>
+				</div>	
+			</div>
+		</div>
+	</div>
 
   <section id="servis" class="property-grid grid">
 
@@ -194,7 +204,7 @@
     <section class="property-grid grid">
         <div class="container">
          <div id="property-grid-item" class="row">
-          <div>IM HERssssssE</div>
+
           <div class="col-sm-12">
             <div class="grid-option">
               <form>
@@ -272,4 +282,9 @@
 <script src="js/main.js"></script>
 
 </body>
+<script>
+  window.addEventListener('load', function() {
+    document.getElementById('loader').style.display = 'none';
+  });
+  </script>
 </html>
