@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const urlParams = new URLSearchParams(window.location.search);
     const category = urlParams.get('category');
     if (category) {
-      fetch(`https://aesthetic-eclair-56d00c.netlify.app/.netlify/functions/api/products-by-category_today?category=${category}`)
+      fetch(`https://aesthetic-eclair-56d00c.netlify.app/.netlify/functions/api/products-of-category_today?category=${category}`)
         .then(response => response.json())
         .then(products => {
           const productContainer = document.querySelector('#property-grid-item');
