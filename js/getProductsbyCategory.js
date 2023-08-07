@@ -16,32 +16,33 @@ document.addEventListener('DOMContentLoaded', function() {
             const productElem = document.createElement('div');
             productElem.classList.add('carousel-item-b', 'col-md-4');
             productElem.innerHTML = `
-              <div class="card-box-a card-shadow">
-                <div class="img-box-a">
-                  <img src="${product.image}" alt="" class="img-a img-fluid">
+            <div class="property-box">
+            <div class="property-thumbnail">
+              <a href="product-details.html?id=${product._id}" class="property-img">
+                <div class="offer-type-wrap">
+                  <span class="offer-type bg-success">${product.category}</span>
                 </div>
-                <div class="card-overlay">
-                  <div class="card-overlay-a-content">
-                    <div class="card-header-a">
-                      <h2 class="card-title-a">
-                        <a href="#">${product.name}
-                          <br /> ${product.name}</a>
-                      </h2>
-                    </div>
-                    <div class="card-body-a">
-                      <div class="price-box d-flex">
-                        <span class="price-a">rent | ${product.price}</span>
-                      </div>
-                      <a href="product-details.html?id=${product._id}" class="link-a">Click here to view
-                        <span class="ion-ios-arrow-forward"></span>
-                      </a>
-                    </div>
-                    <div class="card-footer-a">
-                     
-                    </div>
-                  </div>
-                </div>
-              </div>`;
+                <img class="property-img" src="${product.image}" alt="${product.name}">
+              </a>
+            </div>
+            <div class="detail">
+              <h1 class="title">
+                <a href="product-details.html?id=${product._id}">${product.name}</a>
+              </h1>
+              <div class="location">
+                <a href="product-details.html?id=${product._id}">${product.description}</a>
+              </div>
+              <ul class="facilities-list clearfix">
+                <li>
+                  <i class="fa fa-dollar"></i> ${product.price} 
+                </li>
+              </ul>
+            </div>
+            <div >
+              <a href="product-details.html?id=${product._id}" class="btn btn-link btn-see-more">See More</a>
+            </div>
+          </div>
+            `;
             productContainer.appendChild(productElem);
           });
         })
