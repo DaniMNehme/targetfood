@@ -2635,3 +2635,12 @@ footer .line {
   }
 
 }
+
+/* Category Title Style */
+.category-title {
+  font-size: 24px;
+  color: #333;
+  margin: 0;
+  padding: 10px 0;
+
+}
