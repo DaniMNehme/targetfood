@@ -2444,6 +2444,7 @@ footer .line {
 
 
 .clients {
+  
   padding-top: 20px;
 }
 
@@ -2472,6 +2473,7 @@ footer .line {
 }
 
 .clients .swiper-pagination .swiper-pagination-bullet-active {
+  
   background-color: #000000;
 }
 
@@ -2643,4 +2645,33 @@ footer .line {
   margin: 0;
   padding: 10px 0;
 
+}
+
+.seemore {
+  display: inline-block; /* Allows us to set padding and center text */
+  padding: 10px 20px; /* Size of the button */
+  font-size: 18px; /* Text size */
+  color: white; /* Text color */
+  background-color: #007BFF; /* Background color */
+  border: none; /* No border */
+  border-radius: 5px; /* Rounded corners */
+  text-decoration: none; /* Remove underline from link */
+  transition: background-color 0.3s, transform 0.3s; /* Smooth transition for hover effects */
+}
+
+.seemore:hover, .seemore:focus {
+  background-color: #0056b3; /* Darker shade on hover/focus */
+  text-decoration: none; /* Ensure no underline on hover/focus */
+  transform: scale(1.05); /* Slightly enlarge the button on hover/focus */
+}
+
+/* Optional: Adding a shadow for depth (not on hover) */
+.seemore:active {
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); /* Simulates 'pressing down' the button */
+}
+
+/* Optional: Ensuring that the link is accessible for keyboard navigation */
+.seemore:focus {
+  outline: none; /* Removes the default focus outline */
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5); /* Adds a blue glow for accessibility */
 }
