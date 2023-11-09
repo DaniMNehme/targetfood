@@ -591,10 +591,12 @@ section
 }
 .home_title
 {
-	margin-top: -2px;
+	margin-top: -200px;
 }
 .home_title h1
 {
+	-webkit-text-stroke-width: 2px; /* Width of the outline */
+  -webkit-text-stroke-color: #0f4776; /* Color of the outline */
 	font-size: 80px;
 	font-weight: 600;
 	color: #FFFFFF;

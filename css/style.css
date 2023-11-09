@@ -2444,13 +2444,14 @@ footer .line {
 
 
 .clients {
+  
   padding-top: 20px;
 }
 
 .clients .swiper-slide img {
   opacity: 0.5;
   transition: 0.3s;
-  filter: grayscale(100);
+ 
 }
 
 .clients .swiper-slide img:hover {
@@ -2472,6 +2473,7 @@ footer .line {
 }
 
 .clients .swiper-pagination .swiper-pagination-bullet-active {
+  
   background-color: #000000;
 }
 
@@ -2510,4 +2512,211 @@ footer .line {
   border: 1px solid black;
   margin: 10px;
   padding: 20px;
+}
+
+/* styles.css */
+
+.product-category {
+  margin-bottom: 30px;
+}
+
+.product-item {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 20px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.product-item:hover {
+  transform: translateY(-5px);
+}
+
+.property-box {
+  height: 500px;
+  width: 300px;
+  border: 1px solid #e9ecef;
+  margin-bottom: 30px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  transition: all 0.2s;
+  position: relative;
+  overflow: hidden;
+  padding: 15px; 
+}
+
+.property-thumbnail {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.property-img {
+  /* max-width: 100%; */
+  max-height: 300px; 
+  display: block;
+  position: relative;
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  height: auto;
+  object-fit: cover;
+  /* transition: transform 0.2s ease-in-out; */
+}
+
+.property-thumbnail:hover .property-img {
+  transform: scale(1.05);
+}
+
+.offer-type-wrap {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  z-index: 1;
+}
+
+.offer-type {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #28a745;
+}
+
+.detail {
+  padding: 15px 0;
+}
+
+.title {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.location {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.facilities-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.facilities-list li {
+  font-size: 14px;
+  margin-right: 10px;
+}
+
+.footer {
+  padding-top: 10px;
+}
+
+
+@media (max-width: 769px) { 
+ 
+  .intro {
+ 
+
+    display: none;
+  }
+  .property-box {
+
+
+ 
+  }
+
+  /* Adjust the max-height of the images */
+  .intro_image img {
+    max-height: 150px;
+    object-fit: contain;
+  }
+
+}
+
+/* Category Title Style */
+.category-title {
+  font-size: 24px;
+  color: #333;
+  margin: 0;
+  padding: 10px 0;
+
+}
+
+.seemore {
+  display: inline-block; /* Allows us to set padding and center text */
+  padding: 10px 20px; /* Size of the button */
+  font-size: 18px; /* Text size */
+  color: white; /* Text color */
+  background-color: #007BFF; /* Background color */
+  border: none; /* No border */
+  border-radius: 5px; /* Rounded corners */
+  text-decoration: none; /* Remove underline from link */
+  transition: background-color 0.3s, transform 0.3s; /* Smooth transition for hover effects */
+}
+
+.seemore:hover, .seemore:focus {
+  background-color: #0056b3; /* Darker shade on hover/focus */
+  text-decoration: none; /* Ensure no underline on hover/focus */
+  transform: scale(1.05); /* Slightly enlarge the button on hover/focus */
+}
+
+/* Optional: Adding a shadow for depth (not on hover) */
+.seemore:active {
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); /* Simulates 'pressing down' the button */
+}
+
+/* Optional: Ensuring that the link is accessible for keyboard navigation */
+.seemore:focus {
+  outline: none; /* Removes the default focus outline */
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5); /* Adds a blue glow for accessibility */
+}
+
+
+
+
+
+
+
+
+.carousel-container {
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+}
+
+.carousel-slider {
+  display: inline-block;
+}
+
+.carousel-item {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.carousel-container button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #333;
+  color: white;
+  border: none;
+  cursor: pointer;
+  z-index: 100;
+}
+
+.prev, .next {
+  padding: 10px;
+}
+
+.prev {
+  left: 0;
+}
+
+.next {
+  right: 0;
 }
