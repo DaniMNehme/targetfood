@@ -649,6 +649,14 @@ section
 {
 	margin-top: 6px;
 }
+#product-outside{
+	background-size: contain;
+	background-color: red;
+}
+
+#image-details{
+	background-size: contain;
+}
 .intro_title h2
 {
 	font-size: 48px;
