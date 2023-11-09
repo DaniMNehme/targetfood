@@ -2451,7 +2451,7 @@ footer .line {
 .clients .swiper-slide img {
   opacity: 0.5;
   transition: 0.3s;
-  filter: grayscale(100);
+ 
 }
 
 .clients .swiper-slide img:hover {
@@ -2674,4 +2674,49 @@ footer .line {
 .seemore:focus {
   outline: none; /* Removes the default focus outline */
   box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5); /* Adds a blue glow for accessibility */
+}
+
+
+
+
+
+
+
+
+.carousel-container {
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+}
+
+.carousel-slider {
+  display: inline-block;
+}
+
+.carousel-item {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.carousel-container button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #333;
+  color: white;
+  border: none;
+  cursor: pointer;
+  z-index: 100;
+}
+
+.prev, .next {
+  padding: 10px;
+}
+
+.prev {
+  left: 0;
+}
+
+.next {
+  right: 0;
 }

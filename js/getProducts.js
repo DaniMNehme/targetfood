@@ -33,7 +33,7 @@ fetch("https://aesthetic-eclair-56d00c.netlify.app/.netlify/functions/api/produc
               <div class="card-header-a">
                 <h2 class="card-title-a">
                   <a href="#">${product.name}
-                    <br /> ${product.name}</a>
+                    </a>
                 </h2>
               </div>
               <div class="card-body-a">

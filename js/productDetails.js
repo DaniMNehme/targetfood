@@ -11,13 +11,18 @@ fetch(`https://aesthetic-eclair-56d00c.netlify.app/.netlify/functions/api/produc
     const productCatElem = document.querySelector('#cat-o-product');
     productCatElem.textContent = product.category;
 
+    const productImageElem = document.querySelector('#image-details');
+    productImageElem.src = ''; 
+    productImageElem.src = product.image  + '?v=' + new Date().getTime();
+    console.log(product.image);
+    console.log(productImageElem);
 
     // Update the product's description
     const productDescriptionElem = document.querySelector('.description.color-text-a');
     productDescriptionElem.textContent = product.description;
 
-    // If you have a place for the product's image, you can update it as well
-    // const productImageElem = document.querySelector('selector-for-product-image-element');
+  
+    // const productImageElem = document.querySelector('image-details');
     // productImageElem.src = product.image;
 
     // If you have a place for the product's price, you can update it as well
