@@ -584,7 +584,7 @@ section
 }
 .home_title
 {
-	margin-top: -200px;
+	margin-top: -100px;
 }
 .home_title h1
 {
@@ -597,14 +597,16 @@ section
 }
 .home_text
 {
+	-webkit-text-stroke-width: 1px; /* Width of the outline */
+  -webkit-text-stroke-color: #0f4776; /* Color of the outline */
 	/* max-width: 875px; */
 	margin-top: 14px;
 }
 .home_text p
 {
-	font-size: 20px;
+	font-size: 25px;
 	font-weight: bolder;
-	color: #FFFFFF;
+	color: #ffffff;
 }
 .scroll_icon
 {
