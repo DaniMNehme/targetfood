@@ -651,7 +651,7 @@ section
 }
 #product-outside{
 	background-size: contain;
-	background-color: red;
+	background-color: rgb(249, 249, 249);
 }
 
 #image-details{
