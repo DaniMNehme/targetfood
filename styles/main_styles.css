@@ -68,7 +68,7 @@ ul
 p
 {
 	font-family: 'PT Sans Narrow', sans-serif;
-	font-size: 16px;
+	font-size: 18px;
 	line-height: 1.875;
 	font-weight: 400;
 	color: #636363;
@@ -746,8 +746,9 @@ section
 }
 .video_section_title
 {
-	font-size: 48px;
-	color: #FFFFFF;
+	background-color: #0f4776;
+	font-size: 50px;
+	color: #ffffff;
 	line-height: 1.2;
 }
 .video_section_icon
@@ -1142,7 +1143,7 @@ color:#E1251D ;
 .footer
 {
 	width: 100%;
-	background: #232323;
+	background: #0f4776;
 	padding-top: 70px;
 	padding-bottom: 60px;
 }

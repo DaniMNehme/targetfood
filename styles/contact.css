@@ -65,7 +65,7 @@ ul
 p
 {
 	font-family: 'PT Sans Narrow', sans-serif;
-	font-size: 16px;
+	font-size: 20px;
 	line-height: 1.875;
 	font-weight: 400;
 	color: #636363;
@@ -818,7 +818,7 @@ section
 .footer
 {
 	width: 100%;
-	background: #232323;
+	background: #0f4776;
 	padding-top: 70px;
 	padding-bottom: 60px;
 }

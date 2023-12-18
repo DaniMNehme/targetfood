@@ -2783,3 +2783,10 @@ footer .line {
   from {opacity: .4}
   to {opacity: 1}
 }
+
+#image-details{
+  max-width: 100%;  /* Makes sure the image is not wider than the container */
+  max-height: 500px; /* Adjust to the desired maximum height */
+  display: block; /* Removes extra space below the image */
+  margin: auto; /* Center the image in the container */
+}
