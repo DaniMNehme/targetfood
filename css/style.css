@@ -982,7 +982,12 @@ a:hover {
 
 /*   */
 .card-box-b,
+.card-img-d{
+ 
+  width: 300px;
+}
 .card-box-d {
+  width: 300px;
   position: relative;
   overflow: hidden;
   -webkit-backface-visibility: hidden;
@@ -1019,6 +1024,8 @@ a:hover {
 }
 
 .card-overlay {
+  pointer-events:inherit;
+
   position: absolute;
   width: 100%;
   height: 100%;
@@ -1027,6 +1034,7 @@ a:hover {
 }
 
 .card-shadow {
+  pointer-events:inherit;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 }
@@ -2489,7 +2497,7 @@ footer .line {
 
 .clients .swiper-pagination .swiper-pagination-bullet-active {
   
-  background-color: #000000;
+  background-color: #0f4776;
 }
 
 
@@ -2663,11 +2671,12 @@ footer .line {
 }
 
 .seemore {
+  font-weight: 700;
   display: inline-block; /* Allows us to set padding and center text */
   padding: 10px 20px; /* Size of the button */
   font-size: 18px; /* Text size */
   color: white; /* Text color */
-  background-color: #007BFF; /* Background color */
+  background-color: #0f4776; /* Background color */
   border: none; /* No border */
   border-radius: 5px; /* Rounded corners */
   text-decoration: none; /* Remove underline from link */
@@ -2734,7 +2743,7 @@ footer .line {
 
 /* On hover, add a black background color with a little bit see-through */
 .prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.8);
+  background-color: rgba(255, 255, 255, 0.8);
 }
 
 /* Caption text */
@@ -2770,7 +2779,7 @@ footer .line {
 }
 
 .active, .dot:hover {
-  background-color: #717171;
+  background-color: #0f4776;
 }
 
 /* Fading animation */

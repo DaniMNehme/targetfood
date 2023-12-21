@@ -22,7 +22,7 @@ function displayProductDetails(product) {
 
   // Create the HTML elements for the product details
   const htmlContent = `
-  <section class="intro-single">
+  <section >
    <div style="left: 50px;">
       <div class="row">
         <div class="col-md-12 col-lg-8">
@@ -32,16 +32,7 @@ function displayProductDetails(product) {
           </div>
         </div>
         <div class="col-md-12 col-lg-3">
-            <nav aria-label="breadcrumb" class="breadcrumb-box d-flex justify-content-lg-end">
-              <ol class="breadcrumb">
-                <li class="breadcrumb-item">
-                  <a href="products.html">Home</a>
-                </li>
-                <li class="breadcrumb-item active" aria-current="page">
-                  Product Details
-                </li>
-              </ol>
-            </nav>
+           
           </div>
       </div>
     </div>

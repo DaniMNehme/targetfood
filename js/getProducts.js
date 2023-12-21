@@ -26,7 +26,8 @@ fetch("https://aesthetic-eclair-56d00c.netlify.app/.netlify/functions/api/produc
       const productElem = document.createElement('div');
       productElem.classList.add('carousel-item-b', 'col-md-4');
       productElem.innerHTML = `
-        <div class="card-box-d card-shadow">
+      <div  class="card-box-d">
+        <a  href="product-details.html?id=${product._id}" class="card-box-d card-shadow">
           <div class="img-box-a">
             <img src="${product.image}" alt="" class="img-a img-fluid" id="product-outside">
           </div>
@@ -47,6 +48,7 @@ fetch("https://aesthetic-eclair-56d00c.netlify.app/.netlify/functions/api/produc
               </div>
             </div>
           </div>
+        </a>
         </div>`;
       categoryRow.appendChild(productElem);
     });

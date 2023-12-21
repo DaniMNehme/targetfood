@@ -145,7 +145,7 @@
           <div class="row">
             <div class="col-md-12 col-lg-8">
               <div class="title-single-box">
-                <h1 class="title-single">Target Food is an agent to a wide variety of Food & Healthy Snacks brands</h1>
+                <h1 class="title-single">Target Food is an agent to a wide variety of Food and Healthy Snacks brands</h1>
               </div>
             </div>
     
@@ -193,7 +193,8 @@
                       </div>
                       <div class="swiper-pagination"></div>
                     </div>
-              
+                    <div class="swiper-button-prev"  style="color: #0f4776; border-radius: 50%; width: 00px; display: flex; font-size: 250px; "></div>
+                    <div class="swiper-button-next" style="width: 00px; color: #0f4776;"></div>
                   </div>
                 </section><!-- End Clients Section -->
               </div>
@@ -461,7 +462,7 @@
               </div>
               <div class="col-md-6 col-lg-5 section-md-t3">
                 <div class="title-box-d">
-                  <h3 class="title-d">Snatts
+                  <h3 class="title-d">Snatt's
                   
                     <!-- <span class="color-d">                  TUBULAR AND</span>  CURTAIN MOTORS -->
                 </h3>
@@ -494,7 +495,7 @@
         </div>
               <div  class="col-md-6 col-lg-5 section-md-t3">
                 <div class="title-box-d">
-                  <h3 class="title-d">HealthUp
+                  <h3 class="title-d">Health Up
                     <!-- <span class="color-d">door</span> solutions -->
                   </h3>
                 </div>
@@ -530,7 +531,7 @@
                       <div class="card-title-d align-self-center">
                         <h3 class="title-d">
                           <a href="https://doco-international.com/en/" class="link-two">
-                            HealthUp
+                            Health Up
                             </a>
                         </h3>
                       </div>
@@ -772,6 +773,29 @@
 
   <!-- Template Main Javascript File -->
   <script src="js/main.js"></script>
+
+
+  <script>
+    var swiper = new Swiper('.clients-slider', {
+      slidesPerView: 'auto',
+        loop: true,
+        watchOverflow: true,
+      spaceBetween: 30, 
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+    });
+    
+        // Add any other configurations needed
+    
+    
+    </script>
+
 </body>
 </html>
 

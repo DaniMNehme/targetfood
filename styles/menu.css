@@ -598,8 +598,7 @@ section
 }
 .home_title h1
 {
-	-webkit-text-stroke-width: 2px; /* Width of the outline */
-  -webkit-text-stroke-color: #0f4776; /* Color of the outline */
+
 	font-size: 72px;
 	color: #FFFFFF;
 }
@@ -905,11 +904,11 @@ section
 	width: 100%;
 	background: #0f4776;
 	padding-top: 70px;
-	padding-bottom: 60px;
+	padding-bottom: 0px;
 }
 .footer_logo_title
 {
-	font-size: 57px;
+	font-size: 40px;
 	line-height: 0.75;
 	color: #FFFFFF;
 }

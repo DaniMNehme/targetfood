@@ -588,8 +588,7 @@ section
 }
 .home_title h1
 {
-	-webkit-text-stroke-width: 3px; /* Width of the outline */
-  -webkit-text-stroke-color: #0f4776; /* Color of the outline */
+
 	font-size: 100px;
 	font-weight: 600;
 	color: #FFFFFF;
@@ -746,7 +745,7 @@ section
 }
 .video_section_title
 {
-	background-color: #0f4776;
+	/* background-color: #0f4776; */
 	font-size: 50px;
 	color: #ffffff;
 	line-height: 1.2;
@@ -1145,11 +1144,11 @@ color:#E1251D ;
 	width: 100%;
 	background: #0f4776;
 	padding-top: 70px;
-	padding-bottom: 60px;
+	padding-bottom: 0px;
 }
 .footer_logo_title
 {
-	font-size: 57px;
+	font-size: 40px;
 	line-height: 0.75;
 	color: #FFFFFF;
 }
