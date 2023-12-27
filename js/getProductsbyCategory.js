@@ -16,10 +16,11 @@ document.addEventListener('DOMContentLoaded', function() {
             const productElem = document.createElement('div');
             productElem.classList.add('carousel-item-b', 'col-md-4');
             productElem.innerHTML = `
-              <div class="card-box-a card-shadow">
-                <div class="img-box-a">
-                  <img src="${product.image}" alt="" class="img-a img-fluid">
-                </div>
+            <div  class="card-box-d">
+            <a  href="product-details.html?id=${product._id}" class="card-box-d card-shadow">
+              <div class="img-box-a">
+                <img src="${product.image}" alt="" class="img-a img-fluid" id="product-outside">
+              </div>
                 <div class="card-overlay">
                   <div class="card-overlay-a-content">
                     <div class="card-header-a">
