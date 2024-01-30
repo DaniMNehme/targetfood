@@ -13,12 +13,13 @@ fetch("https://aesthetic-eclair-56d00c.netlify.app/.netlify/functions/api/produc
   const mainContainer = document.querySelector('#property-grid-item');
 
   categories.forEach(category => {
+    console.log(category._id)
     const categoryRow = document.createElement('div');
     categoryRow.classList.add('row');
     categoryRow.innerHTML = `
       <div class="col-md-8 col-6"><h2>${category._id}</h2></div>
       <div class="col-md-4 col-6 text-right">
-        <a href="products-category.html?category=${category._id}" class="btn btn-color-b">Show all</a>
+        <a href="products-category.html?category=${encodeURIComponent(category._id)}" class="btn btn-color-b">Show all</a>
       </div>
     `;
 

@@ -8,7 +8,7 @@ fetch(`https://aesthetic-eclair-56d00c.netlify.app/.netlify/functions/api/produc
 
   .then(product => {
 
-      console.log("here i am neheheheheheh")
+    
       displayProductDetails(product);
     })
     .catch(err => console.error('An error occurred:', err));
@@ -29,7 +29,9 @@ function displayProductDetails(product) {
           <div class="title-single-box">
             <h1 class="title-single">${product.name}</h1>
             <span id="cat-o-product" class="color-text-a">${product.category}</span>
-          </div>
+            <br>
+            <span id="cat-o-product" class="color-text-a">${ 'id = ' + product._id}</span>
+            </div>
         </div>
         <div class="col-md-12 col-lg-3">
            

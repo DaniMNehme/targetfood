@@ -5,10 +5,19 @@
 </head>
 <body>
   <div class="container">
-    <form id="product-form" action="https://aesthetic-eclair-56d00c.netlify.app/.netlify/functions/api/add_product" method="POST">
-      <h2>Add Product</h2>
+    <form id="product-form" action="https://aesthetic-eclair-56d00c.netlify.app/.netlify/functions/api/edit_product?id=65b397c2c0d3f42eb04a7e4b" method="POST">
+        <!-- Other form fields go here -->
+    
+        <!-- Hidden input field for the ID -->
+        <input type="hidden" name="ID" value="65b397c2c0d3f42eb04a7e4b" />
+
+      <h2>Edit Product</h2>
+      <!-- <label for="id">ID:</label> -->
+      <!-- <input type="text" id="name" name="name" required> -->
+
+
       <label for="name">Name:</label>
-      <input type="text" id="name" name="name" required>
+      <input type="text" id="name" name="name">
 
       <label for="description">Description:</label>
       <textarea id="description" name="description"></textarea>
@@ -21,8 +30,10 @@
 
       <label for="image">Image:</label>
       <input type="file" id="image" name="image">
-
-      <input type="submit" value="Add Product">
+<br>
+<br>
+<br>
+      <input type="submit" value="Confirm">
     </form>
   </div>
 </body>
