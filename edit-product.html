@@ -1,41 +1,70 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Edit Product</title>
 </head>
 <body>
-  <div class="container">
-    <form id="product-form" action="https://aesthetic-eclair-56d00c.netlify.app/.netlify/functions/api/edit_product?id=65b397c2c0d3f42eb04a7e4b" method="POST">
-        <!-- Other form fields go here -->
-    
-        <!-- Hidden input field for the ID -->
-        <input type="hidden" name="ID" value="65b397c2c0d3f42eb04a7e4b" />
+    <div class="container">
+        <h2>Edit Product</h2>
+        <form id="product-form" method="POST">
 
-      <h2>Edit Product</h2>
-      <!-- <label for="id">ID:</label> -->
-      <!-- <input type="text" id="name" name="name" required> -->
+            <!-- Fields to query the item -->
+            <div class="query-section">
+                <label for="productId">Product ID:</label><br>
+                <input type="text" id="productId" name="id" placeholder="123abc" oninput="checkInput('name')"><br>
 
+                <label for="productName">Product Name:</label><br>
+                <input type="text" id="productName" name="name" placeholder="Product Name" oninput="checkInput('id')"><br>
+            </div>
 
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="name">
+            <hr> <!-- Separator -->
 
-      <label for="description">Description:</label>
-      <textarea id="description" name="description"></textarea>
+            <!-- Fields for new product details -->
+            <div class="edit-section">
+                <label for="newName">New Name:</label><br>
+                <input type="text" id="newName" name="newName" placeholder="New Product Name"><br>
 
-      <label for="category">Category:</label>
-      <input type="text" id="category" name="category">
+                <label for="description">Description:</label><br>
+                <textarea id="description" name="description" placeholder="Product Description"></textarea><br>
 
-      <label for="price">Price:</label>
-      <input type="double" id="price" name="price">
+                <label for="category">Category:</label><br>
+                <input type="text" id="category" name="category" placeholder="Category"><br>
 
-      <label for="image">Image:</label>
-      <input type="file" id="image" name="image">
-<br>
-<br>
-<br>
-      <input type="submit" value="Confirm">
-    </form>
-  </div>
+                <label for="price">Price:</label><br>
+                <input type="number" id="price" name="price" placeholder="Price"><br>
+            </div>
+
+            <input type="submit" value="Confirm">
+        </form>
+    </div>
+
+    <script>
+        function checkInput(otherField) {
+            if (document.getElementById('productId').value) {
+                document.getElementById('productName').disabled = true;
+            } else if (document.getElementById('productName').value) {
+                document.getElementById('productId').disabled = true;
+            } else {
+                document.getElementById(otherField).disabled = false;
+            }
+        }
+
+        document.getElementById('product-form').onsubmit = function(event) {
+            event.preventDefault();
+            const productId = document.getElementById('productId').value;
+            const productName = document.getElementById('productName').value;
+            let actionUrl = 'https://aesthetic-eclair-56d00c.netlify.app/.netlify/functions/api/edit_product';
+
+            if (productId) {
+                actionUrl += '?id=' + productId;
+            } else if (productName) {
+                actionUrl += '?name=' + encodeURIComponent(productName);
+            }
+
+            this.action = actionUrl;
+            this.submit();
+        };
+    </script>
 </body>
 </html>
-<!-- action="http://localhost:3000/add_product" method="POST" enctype="multipart/form-data" -->
