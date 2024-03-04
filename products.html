@@ -21,6 +21,8 @@
 
 
 
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
 
 
@@ -59,6 +61,16 @@
 </script>
 
 <style>
+	.carousel-item {
+    display: none;
+}
+
+.carousel-item.active {
+    display: block;
+}
+
+/* Style your buttons as needed */
+
   .box {
     width: 300px;
     height: 200px;
@@ -66,6 +78,8 @@
     margin: 10px;
     padding: 20px;
   }
+
+  
 </style>
 </head>
 
@@ -291,7 +305,7 @@
     </div> -->
   </section>  	<!-- Footer -->
 
-	<footer class="footer">
+	<footer class="footer" >
 		<div  >
 			<div class="row align-items-center">
 
@@ -302,7 +316,7 @@
 						<!-- <div class="footer_logo_subtitle">restaurant</div> -->
 					</div>
 					<div style="color: white" class="copyright"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-<p style="line-height: 1.2; color: white;">Copyright &copy;<script>document.write(new Date().getFullYear());</script> Target Food CO All rights reserved</p>
+<p style="line-height: 1.2; color: white;font-size: 10px;">Copyright 2024 Target Food Co. S.A.L all rights reserved</p>
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></div>
 				</div>
 
@@ -340,7 +354,7 @@
 					</div>
 				</div>
 				<!-- Footer Contact -->
-				<div class="col-lg-3 footer_col">
+				<div class="col-lg-3 footer_col" >
 					<div class="footer_contact">
 						<ul>
 							<li style="margin-bottom: 15px;"class="d-flex flex-row align-items-start justify-content-start">

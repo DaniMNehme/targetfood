@@ -10,6 +10,73 @@ fetch("https://aesthetic-eclair-56d00c.netlify.app/.netlify/functions/api/produc
     return (indexA === -1 ? Infinity : indexA) - (indexB === -1 ? Infinity : indexB);
   });
 
+
+  if (window.innerWidth < 768) {
+    const mainContainer = document.querySelector('#property-grid-item');
+
+    categories.forEach((category, catIndex) => {
+        const categoryDiv = document.createElement('div');
+        categoryDiv.classList.add('category');
+
+        const title = document.createElement('h2');
+        title.textContent = category._id;
+        categoryDiv.appendChild(title);
+
+        let currentSlide = 0;
+
+        const renderSlide = () => {
+            if (category.products.length === 0) return;
+            categoryDiv.querySelectorAll('.carousel-item').forEach(item => item.classList.remove('active'));
+            categoryDiv.querySelectorAll('.carousel-item')[currentSlide].classList.add('active');
+        };
+
+        category.products.forEach((product, index) => {
+            const productDiv = document.createElement('div');
+            productDiv.classList.add('carousel-item');
+            if (index === 0) productDiv.classList.add('active'); // First product is active by default
+
+            productDiv.innerHTML = `
+            <div style="background-color: white;">
+            <a href="product-details.html?id=${product._id}" class="card-box-d card-shadow" style="background-color: white;">
+                <div>
+                    <img src="${product.image}" alt="${product.name}" style="width: 100%;">
+                    <h3>${product.name}</h3>
+                </div>
+            </a>
+            </div>
+        `;
+        
+            categoryDiv.appendChild(productDiv);
+        });
+
+        const prevButton = document.createElement('button');
+        prevButton.className = 'prev';
+        // prevButton.textContent = 'Prev';
+        prevButton.textContent = '<'
+        prevButton.onclick = () => {
+            currentSlide = (currentSlide - 1 + category.products.length) % category.products.length;
+            renderSlide();
+        };
+
+        const nextButton = document.createElement('button');
+        nextButton.className = 'next'
+        nextButton.textContent = '>'
+
+        // nextButton.textContent = 'Next';
+        nextButton.onclick = () => {
+            currentSlide = (currentSlide + 1) % category.products.length;
+            renderSlide();
+        };
+
+        categoryDiv.appendChild(prevButton);
+        categoryDiv.appendChild(nextButton);
+
+        mainContainer.appendChild(categoryDiv);
+    });
+
+}
+else{
+
   const mainContainer = document.querySelector('#property-grid-item');
 
   categories.forEach(category => {
@@ -58,7 +125,7 @@ fetch("https://aesthetic-eclair-56d00c.netlify.app/.netlify/functions/api/produc
   });
 
   document.getElementById('preloader').style.display = 'none';
-})
+}})
 .catch(err => console.error('An error occurred:', err));
 
 document.addEventListener('DOMContentLoaded', function() {

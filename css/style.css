@@ -987,6 +987,7 @@ a:hover {
   width: 300px;
 }
 .card-box-d {
+ 
   width: 300px;
   position: relative;
   overflow: hidden;
@@ -2727,7 +2728,7 @@ footer .line {
   width: auto;
   margin-top: -22px;
   padding: 16px;
-  color: white;
+  color:  #0f4776;
   font-weight: bold;
   font-size: 18px;
   transition: 0.6s ease;
@@ -2799,3 +2800,6 @@ footer .line {
   display: block; /* Removes extra space below the image */
   margin: auto; /* Center the image in the container */
 }
+
+
+
