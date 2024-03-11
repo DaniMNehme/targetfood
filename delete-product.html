@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Delete Product</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Delete Product</h2>
+        <form id="delete-product-form">
+            <label for="productId">Product ID:</label>
+            <input type="text" id="productId" name="id" required placeholder="Enter Product ID">
+            <button type="submit">Delete Product</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('delete-product-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+            const productId = document.getElementById('productId').value;
+
+            fetch('https://aesthetic-eclair-56d00c.netlify.app/.netlify/functions/api/delete_product/' + productId, { // Replace with your actual endpoint
+                method: 'DELETE',
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert('Product deleted successfully');
+                // Additional actions upon successful deletion, e.g., clear the input field
+                document.getElementById('productId').value = '';
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Failed to delete the product. Please try again.');
+            });
+        });
+    </script>
+</body>
+</html>
