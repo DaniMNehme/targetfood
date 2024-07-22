@@ -11,7 +11,7 @@
   
 	  // Initialize swiper when document is fully loaded
 	  var swiper = new Swiper('.swiper', {
-		slidesPerView: 1,
+		slidesPerView: 3,
 		spaceBetween: 10,
 		// init: false,
 		pagination: {
@@ -194,29 +194,41 @@
 
 
   var slideIndex = 0;
-showSlides();
+  var slideIndex = 1;  // Initialize slideIndex globally
 
-function showSlides() {
-  var i;
-  var slides = document.getElementsByClassName("mySlides");
-  var dots = document.getElementsByClassName("dot");
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
+  function showSlides() {
+	var i;
+	var slides = document.getElementsByClassName("mySlides");
+	var dots = document.getElementsByClassName("dot");
+  
+	for (i = 0; i < slides.length; i++) {
+	  slides[i].style.display = "none";  
+	}
+  
+	slideIndex++;
+	if (slideIndex > slides.length) { slideIndex = 1 }
+  
+	for (i = 0; i < dots.length; i++) {
+	  dots[i].className = dots[i].className.replace(" active", "");
+	}
+  
+	slides[slideIndex - 1].style.display = "block";
+	dots[slideIndex - 1].className += " active";
+  
+	// Clear previous timeouts and set a new one
+	clearTimeout(window.slideTimeout);
+	window.slideTimeout = setTimeout(showSlides, 10000); // Change image every 10 seconds
   }
-  slideIndex++;
-  if (slideIndex > slides.length) { slideIndex = 1 }
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
+  
+  function plusSlides(n) {
+	showSlides(slideIndex += n - 1); // Adjust index before showing slides
   }
-  slides[slideIndex - 1].style.display = "block";
-  dots[slideIndex - 1].className += " active";
-  setTimeout(showSlides, 3000); // Change image every 2 seconds (2000 milliseconds)
-}
-
-function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
-
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
+  
+  function currentSlide(n) {
+	showSlides(slideIndex = n - 1); // Adjust index before showing slides
+  }
+  
+  document.addEventListener("DOMContentLoaded", function() {
+	showSlides(); // Start the slideshow
+  });
+  
