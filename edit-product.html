@@ -23,7 +23,7 @@
             <!-- Fields for new product details -->
             <div class="edit-section">
                 <label for="newName">New Name:</label><br>
-                <input type="text" id="newName" name="newName" placeholder="New Product Name"><br>
+                <input type="text" id="name" name="name" placeholder="New Product Name"><br>
 
                 <label for="description">Description:</label><br>
                 <textarea id="description" name="description" placeholder="Product Description"></textarea><br>
@@ -31,8 +31,15 @@
                 <label for="category">Category:</label><br>
                 <input type="text" id="category" name="category" placeholder="Category"><br>
 
+                <label for="subcategory">Subcategory:</label><br>
+                <input type="text" id="subcategory" name="subcategory" placeholder="Subcategory"><br>
+
                 <label for="price">Price:</label><br>
-                <input type="number" id="price" name="price" placeholder="Price"><br>
+                <input type="number" id="price" name="price" placeholder="Price" step="0.01"><br>
+
+                <label for="image">Product Image:</label><br>
+                <input type="file" id="image" name="image"><br>
+                <br>
             </div>
 
             <input type="submit" value="Confirm">
@@ -49,21 +56,38 @@
                 document.getElementById(otherField).disabled = false;
             }
         }
-
-        document.getElementById('product-form').onsubmit = function(event) {
+        
+        document.getElementById('product-form').onsubmit = async function(event) {
             event.preventDefault();
+            const formData = new FormData(this);
             const productId = document.getElementById('productId').value;
             const productName = document.getElementById('productName').value;
             let actionUrl = 'https://aesthetic-eclair-56d00c.netlify.app/.netlify/functions/api/edit_product';
-
+        
             if (productId) {
                 actionUrl += '?id=' + productId;
             } else if (productName) {
                 actionUrl += '?name=' + encodeURIComponent(productName);
             }
-
-            this.action = actionUrl;
-            this.submit();
+        
+            try {
+                const response = await fetch(actionUrl, {
+                    method: 'POST',
+                    body: formData,
+                });
+        
+                if (!response.ok) throw new Error('Network response was not ok.');
+        
+                const result = await response.json();
+                console.log('Success:', result);
+                alert('Product updated successfully!');
+                window.location.reload();
+        
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Failed to update the product. Please try again.');
+                window.location.reload();
+            }
         };
     </script>
 </body>
