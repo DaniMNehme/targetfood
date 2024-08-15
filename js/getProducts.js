@@ -1,157 +1,147 @@
-const preferredOrder = ["Snacks / Chips","Snacks / Chocolate","Snacks / Biscuits","Snacks / Salted Biscuits","Snacks / Wafer","Snacks / Cake","Snacks / Rice Cake","Snacks / Date","Snacks / Musk","Beverage / Cocoa","Beverage / Coffee","Beverage / Tea","Beverage / Syrups","Pantry / Condiments & Dressings","Pantry / Cans","Pantry / Pasta & Grains","Pantry / Oils & Vinegars","Pantry / Processed Cheese","Pantry / Toasts", /* Add other categories here */];
+const preferredOrder = ["Snacks", "Beverage", "Pantry", "Household"];
 
-fetch("https://aesthetic-eclair-56d00c.netlify.app/.netlify/functions/api/products-by-category_today")
-.then(response => response.json())
-.then(categories => {
-  // Sort categories based on the preferred order
-  categories.sort((a, b) => {
-    let indexA = preferredOrder.indexOf(a._id);
-    let indexB = preferredOrder.indexOf(b._id);
-    return (indexA === -1 ? Infinity : indexA) - (indexB === -1 ? Infinity : indexB);
-  });
-
-
-  if (window.innerWidth < 768) {
-    const mainContainer = document.querySelector('#property-grid-item');
-
-    categories.forEach((category, catIndex) => {
-        const categoryDiv = document.createElement('div');
-        categoryDiv.classList.add('category');
-
-        const title = document.createElement('h2');
-        title.textContent = category._id;
-        categoryDiv.appendChild(title);
-
-        let currentSlide = 0;
-
-        const renderSlide = () => {
-            if (category.products.length === 0) return;
-            categoryDiv.querySelectorAll('.carousel-item').forEach(item => item.classList.remove('active'));
-            categoryDiv.querySelectorAll('.carousel-item')[currentSlide].classList.add('active');
-        };
-
-        category.products.forEach((product, index) => {
-            const productDiv = document.createElement('div');
-            productDiv.classList.add('carousel-item');
-            if (index === 0) productDiv.classList.add('active'); // First product is active by default
-
-            productDiv.innerHTML = `
-            <div style="background-color: white;">
-            <a href="product-details.html?id=${product._id}" class="card-box-d card-shadow" style="background-color: white;">
-                <div>
-                    <img src="${product.image}" alt="${product.name}" style="width: 100%;">
-                    <h3>${product.name}</h3>
-                </div>
-            </a>
-            </div>
-        `;
-        
-            categoryDiv.appendChild(productDiv);
-        });
-
-        const prevButton = document.createElement('button');
-        prevButton.className = 'prev';
-        // prevButton.textContent = 'Prev';
-        prevButton.textContent = '<'
-        prevButton.onclick = () => {
-            currentSlide = (currentSlide - 1 + category.products.length) % category.products.length;
-            renderSlide();
-        };
-
-        const nextButton = document.createElement('button');
-        nextButton.className = 'next'
-        nextButton.textContent = '>'
-
-        // nextButton.textContent = 'Next';
-        nextButton.onclick = () => {
-            currentSlide = (currentSlide + 1) % category.products.length;
-            renderSlide();
-        };
-
-        categoryDiv.appendChild(prevButton);
-        categoryDiv.appendChild(nextButton);
-
-        mainContainer.appendChild(categoryDiv);
-    });
-
+function consolidateCategories(categories) {
+    return categories.reduce((acc, category) => {
+        if (category._id.startsWith("Snacks")) {
+            let snacksCategory = acc.find(c => c._id === "Snacks");
+            if (snacksCategory) {
+                snacksCategory.subcategories = snacksCategory.subcategories.concat(category.subcategories);
+            } else {
+                acc.push({ _id: "Snacks", subcategories: category.subcategories });
+            }
+        } else if (category._id !== "") {
+            acc.push(category);
+        }
+        return acc;
+    }, []);
 }
-else{
 
-  const mainContainer = document.querySelector('#property-grid-item');
+function createCategoryNavbar(categories) {
+    const categoriesList = document.getElementById('categories-list');
+    categoriesList.innerHTML = ''; // Clear existing content
+    
+    // Add "All Products" option
+    const allProductsLi = document.createElement('li');
+    allProductsLi.className = 'category-dropdown';
+    const allProductsA = document.createElement('a');
+    allProductsA.href = '#';
+    allProductsA.textContent = 'All Products';
+    allProductsA.onclick = (e) => {
+        e.preventDefault();
+        displayAllProducts(categories);
+        updateCategoryTitle('All Products');
+    };
+    allProductsLi.appendChild(allProductsA);
+    categoriesList.appendChild(allProductsLi);
 
-  categories.forEach(category => {
-    console.log(category._id)
-    const categoryRow = document.createElement('div');
-    categoryRow.classList.add('row');
-    categoryRow.innerHTML = `
-      <div class="col-md-8 col-6"><h2>${category._id}</h2></div>
-      <div class="col-md-4 col-6 text-right">
-        <a href="products-category.html?category=${encodeURIComponent(category._id)}" class="btn btn-color-b">Show all</a>
-      </div>
-    `;
-
-    category.products.slice(0, 3).forEach(product => {
-      const productElem = document.createElement('div');
-      productElem.classList.add('carousel-item-b', 'col-md-4');
-      productElem.innerHTML = `
-      <div  class="card-box-d">
-        <a  href="product-details.html?id=${product._id}" class="card-box-d card-shadow">
-          <div class="img-box-a">
-            <img src="${product.image}" alt="" class="img-a img-fluid" id="product-outside">
-          </div>
-          <div class="card-overlay">
-            <div class="card-overlay-a-content">
-              <div class="card-header-a">
-                <h2 class="card-title-a">
-                  <a href="product-details.html?id=${product._id}">${product.name}</a>
-                </h2>
-              </div>
-              <div class="card-body-a">
-                <a href="product-details.html?id=${product._id}" class="link-a">Click here to view
-                  <span class="ion-ios-arrow-forward"></span>
-                </a>
-              </div>
-              <div class="card-footer-a">
-                <!-- Footer content -->
-              </div>
-            </div>
-          </div>
-        </a>
-        </div>`;
-      categoryRow.appendChild(productElem);
+    categories.forEach(category => {
+        const li = document.createElement('li');
+        li.className = 'category-dropdown';
+        
+        const a = document.createElement('a');
+        a.href = '#';
+        a.textContent = category._id;
+        a.onclick = (e) => {
+            e.preventDefault();
+            displayAllProductsInCategory(category);
+            updateCategoryTitle(category._id);
+        };
+        
+        const dropdownContent = document.createElement('div');
+        dropdownContent.className = 'dropdown-content';
+        
+        category.subcategories.forEach(subcategory => {
+            const subA = document.createElement('a');
+            subA.href = '#';
+            subA.textContent = subcategory.subcategory;
+            subA.onclick = (e) => {
+                e.preventDefault();
+                displayProducts(subcategory.products);
+                updateCategoryTitle(`${category._id} - ${subcategory.subcategory}`);
+            };
+            dropdownContent.appendChild(subA);
+        });
+        
+        li.appendChild(a);
+        li.appendChild(dropdownContent);
+        categoriesList.appendChild(li);
     });
+}
 
-    mainContainer.appendChild(categoryRow);
-  });
+function updateCategoryTitle(title) {
+    const categoryTitle = document.getElementById('category-title');
+    if (categoryTitle) {
+        categoryTitle.textContent = title;
+    }
+}
 
-  document.getElementById('preloader').style.display = 'none';
-}})
-.catch(err => console.error('An error occurred:', err));
+function displayAllProductsInCategory(category) {
+    const allProducts = category.subcategories.flatMap(subcategory => subcategory.products);
+    displayProducts(allProducts);
+}
+
+function displayAllProducts(categories) {
+    const allProducts = categories.flatMap(category => 
+        category.subcategories.flatMap(subcategory => subcategory.products)
+    );
+    displayProducts(allProducts);
+}
+
+function displayProducts(products) {
+    const mainContainer = document.querySelector('#property-grid-item');
+    if (!mainContainer) return;
+
+    mainContainer.innerHTML = ''; // Clear existing content
+
+    products.forEach(product => {
+        const productElem = document.createElement('div');
+        productElem.classList.add('col-md-4');
+        productElem.innerHTML = `
+            <div class="card-box-a card-shadow">
+                <div class="img-box-a">
+                    <img src="${product.image}" alt="${product.name}" class="img-a img-fluid">
+                </div>
+                <div class="card-overlay">
+                    <div class="card-overlay-a-content">
+                        <div class="card-header-a">
+                            <h2 class="card-title-a">
+                                <a href="product-details.html?id=${product._id}">${product.name}</a>
+                            </h2>
+                        </div>
+                        <div class="card-body-a">
+                            <a href="product-details.html?id=${product._id}" class="link-a">Click here to view
+                                <span class="ion-ios-arrow-forward"></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>`;
+        mainContainer.appendChild(productElem);
+    });
+}
 
 document.addEventListener('DOMContentLoaded', function() {
-  function populateCategoriesNavbar() {
     fetch("https://aesthetic-eclair-56d00c.netlify.app/.netlify/functions/api/products-by-category_today")
-      .then(response => response.json())
-      .then(categories => {
-        // Sort categories based on the preferred order
-        categories.sort((a, b) => {
-          let indexA = preferredOrder.indexOf(a._id);
-          let indexB = preferredOrder.indexOf(b._id);
-          return (indexA === -1 ? Infinity : indexA) - (indexB === -1 ? Infinity : indexB);
-        });
+        .then(response => response.json())
+        .then(categories => {
+            console.log('Original Categories:', categories);
 
-        const categoriesNavbar = document.getElementById('categories-navbar');
-        categories.forEach(category => {
-          const categoryListItem = document.createElement('li');
-          const categoryLink = document.createElement('a');
-          categoryLink.href = `products-category.html?category=${category._id}`;
-          categoryLink.innerText = category._id;
-          categoryListItem.appendChild(categoryLink);
-          categoriesNavbar.appendChild(categoryListItem);
-        });
-      })
-      .catch(err => console.error('An error occurred:', err));
-  }
+            // Consolidate categories
+            let consolidatedCategories = consolidateCategories(categories);
+            console.log('Consolidated Categories:', consolidatedCategories);
 
-  populateCategoriesNavbar();
+            // Sort categories based on the preferred order
+            consolidatedCategories.sort((a, b) => {
+                let indexA = preferredOrder.indexOf(a._id.split(' / ')[0]);
+                let indexB = preferredOrder.indexOf(b._id.split(' / ')[0]);
+                return (indexA === -1 ? Infinity : indexA) - (indexB === -1 ? Infinity : indexB);
+            });
+
+            createCategoryNavbar(consolidatedCategories);
+
+            // Display all products initially
+            displayAllProducts(consolidatedCategories);
+            updateCategoryTitle('All Products');
+        })
+        .catch(err => console.error('An error occurred:', err));
 });
