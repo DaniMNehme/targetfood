@@ -206,11 +206,11 @@
 	}
 	.home_subtitle
 	{
-		font-size: 48px;
+		font-size: 40px;
 	}
 	.home_title h1
 	{
-		font-size: 56px;
+		font-size: 48px;
 	}
 	.intro_content
 	{
@@ -235,33 +235,33 @@
 {
 	p
 	{
-		font-size: 14px;
+		font-size: 15px;
 	}
 	.header_content,
 	.header.scrolled .header_content
 	{
-		height: 80px;
+		height: 72px;
 	}
 	.hamburger_bar
 	{
 		right: 0px;
-		height: 80px;
+		height: 72px;
 	}
 	.hamburger_bar.scrolled
 	{
-		height: 80px;
+		height: 72px;
 	}
 	.home
 	{
-		height: 500px;
+		min-height: 60vh;
 	}
 	.home_subtitle
 	{
-		font-size: 30px;
+		font-size: 26px;
 	}
 	.home_title h1
 	{
-		font-size: 36px;
+		font-size: 32px;
 	}
 	.intro_content
 	{
@@ -334,6 +334,14 @@
 	.res_select
 	{
 		width: 100%;
+	}
+	.video_section_wrap
+	{
+		margin-bottom: 48px;
+	}
+	.video_embed
+	{
+		border-radius: 14px;
 	}
 	.footer_logo_title
 	{

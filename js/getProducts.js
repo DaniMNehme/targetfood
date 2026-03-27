@@ -1,5 +1,19 @@
 const preferredOrder = ["Snacks", "Beverage", "Pantry", "Household"];
 
+function showLoader() {
+    const loader = document.getElementById('loader');
+    if (loader) {
+        loader.classList.remove('loader-hidden');
+    }
+}
+
+function hideLoader() {
+    const loader = document.getElementById('loader');
+    if (loader) {
+        loader.classList.add('loader-hidden');
+    }
+}
+
 function consolidateCategories(categories) {
     return categories.reduce((acc, category) => {
         if (category._id.startsWith("Snacks")) {
@@ -91,36 +105,29 @@ function displayProducts(products) {
     const mainContainer = document.querySelector('#property-grid-item');
     if (!mainContainer) return;
 
+    showLoader(); // Show loader before starting
     mainContainer.innerHTML = ''; // Clear existing content
 
-    products.forEach(product => {
-        const productElem = document.createElement('div');
-        productElem.classList.add('col-md-4');
-        productElem.innerHTML = `
-            <div class="card-box-a card-shadow">
-                <div class="img-box-a">
-                    <img src="${product.image}" alt="${product.name}" class="img-a img-fluid">
+    // Wrap the product rendering in a setTimeout to ensure the loader is visible
+    setTimeout(() => {
+        products.forEach(product => {
+            const card = document.createElement('article');
+            card.className = 'product-card';
+            card.innerHTML = `
+                <img src="${product.image}" alt="${product.name}">
+                <div class="product-card__body">
+                    <div class="product-card__title">${product.name}</div>
+                    <a class="product-card__link" href="product-details.html?id=${product._id}">View details →</a>
                 </div>
-                <div class="card-overlay">
-                    <div class="card-overlay-a-content">
-                        <div class="card-header-a">
-                            <h2 class="card-title-a">
-                                <a href="product-details.html?id=${product._id}">${product.name}</a>
-                            </h2>
-                        </div>
-                        <div class="card-body-a">
-                            <a href="product-details.html?id=${product._id}" class="link-a">Click here to view
-                                <span class="ion-ios-arrow-forward"></span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>`;
-        mainContainer.appendChild(productElem);
-    });
+            `;
+            mainContainer.appendChild(card);
+        });
+        hideLoader(); // Hide loader after products are displayed
+    }, 10);
 }
 
 document.addEventListener('DOMContentLoaded', function() {
+    showLoader(); // Show loader before fetching
     fetch("https://aesthetic-eclair-56d00c.netlify.app/.netlify/functions/api/products-by-category_today")
         .then(response => response.json())
         .then(categories => {
