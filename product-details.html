@@ -1,567 +1,68 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Category</title>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <meta content="" name="keywords">
-  <meta content="" name="description">
-
-  <!-- Favicons -->
-  <link href="img/favicon.png" rel="icon">
-  <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
-
-  <!-- Bootstrap CSS File -->
-  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-  <!-- Libraries CSS Files -->
-  <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-  <link href="lib/animate/animate.min.css" rel="stylesheet">
-  <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
-  <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-
-
-  <!-- Main Stylesheet File -->
-  <link href="css/style.css" rel="stylesheet">
-
-
-  <title>Target Food</title>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="description" content="Target Food">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" type="text/css" href="styles/bootstrap-4.1.2/bootstrap.min.css">
-<link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-<link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.carousel.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
-<link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
-<link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/animate.css">
-<link href="plugins/colorbox/colorbox.css" rel="stylesheet" type="text/css">
-<link href="plugins/jquery-datepicker/jquery-ui.css" rel="stylesheet" type="text/css">
-<link href="plugins/jquery-timepicker/jquery.timepicker.css" rel="stylesheet" type="text/css">
-<link rel="stylesheet" type="text/css" href="styles/main_styles.css">
-<link rel="stylesheet" type="text/css" href="styles/responsive.css">
-
- <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
- <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
- <link href="lib/animate/animate.min.css" rel="stylesheet">
- <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
- <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-
- <!-- Main Stylesheet File -->
- <link href="css/style.css" rel="stylesheet">
-
- <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
- <script src="lib/jquery/jquery.min.js"></script>
- <script src="lib/jquery/jquery-migrate.min.js"></script>
- <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
- <script src="lib/easing/easing.min.js"></script>
- <script src="lib/mobile-nav/mobile-nav.js"></script>
- <script src="lib/wow/wow.min.js"></script>
- <script src="lib/waypoints/waypoints.min.js"></script>
- <script src="lib/counterup/counterup.min.js"></script>
- <script src="lib/owlcarousel/owl.carousel.min.js"></script>
- <script src="lib/isotope/isotope.pkgd.min.js"></script>
- <script src="lib/lightbox/js/lightbox.min.js"></script> 
-
- <script>
-  // JQuery to hide the loader after page is fully loaded
-  $(window).on('load', function(){
-    $('.loader-wrapper').fadeOut('slow');
-  });
-</script>
+  <title>Product Details | Target Food Co. S.A.L</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Product information, benefits, and available nutrition details from Target Food.">
+  <link rel="icon" href="images/favicon.png" type="image/png">
+  <link rel="stylesheet" href="css/site.css">
+  <script defer src="js/home.js"></script>
+  <script defer src="js/productDetails.js"></script>
 </head>
+<body>
+  <div class="page">
+    <div class="grain" aria-hidden="true"></div>
 
-<body style=" background-color: #0f4776; height: 100%;">
+    <header class="topbar">
+      <div class="container topbar__row">
+        <a class="brand" href="index.html#top">
+          <img src="images/targetfoodlogo.png" alt="Target Food logo">
+        </a>
+        <nav class="nav" data-nav>
+          <a href="index.html#home">Home</a>
+          <a href="about.html">About</a>
+          <a href="brands.html">Brands</a>
+          <a href="products.html">Products</a>
+          <a href="contact.html" class="btn btn--small btn--ghost btn--ghost--light">Contact</a>
+        </nav>
+        <button class="nav__toggle" data-nav-toggle aria-label="Toggle navigation" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </header>
 
-  <div class="super_container" style=" background-color: white;  min-height: calc(100vh - 200px);">
-    
-    <!-- Header -->
-  
-    <div >
-      
-      <div style="left: 50px;">
-        
-        <div class="row">
-          <div class="col" >
-            <div class="header_content d-flex flex-row align-items-center justify-content-start">
-              <!-- <div class="logo"> -->
-                
-                <a href="index.html">
-                  <img src="images/targetfoodlogodark.png" style="width:200px; height:auto;">
-  
-                  <!-- <div>Target Food</div>
-                  <div>restaurant</div> -->
-                </a>
-              <!-- </div> -->
-              <nav class="main_nav">
-                <ul class="d-flex flex-row align-items-center justify-content-start">
-                  <li><a href="index.html" style="color: black;">home</a></li>
-                  <li><a href="about.html" style="color: black;">about us</a></li>
-                  <li><a href="brands.html" style="color: black;">brands</a></li>
-                  <li><a href="products.html" style="color: black;">products</a></li>
-                  <li><a href="contact.html" style="color: black;">contact</a></li>
-                </ul>
-              </nav>
-            
-            </div>
+    <main>
+      <section class="page-hero page-hero--compact" style="background-image:url('images/category-food-snacks.jpg')">
+        <div class="container page-hero__inner">
+          <span class="breadcrumb">Home · Products · Details</span>
+          <h1 id="product-page-title">Product details</h1>
+          <p>Review the product overview, benefits, and available nutrition information.</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container" id="product-details-inner" aria-live="polite">
+          <div class="loader-container" id="product-details-loader">
+            <div class="loader" aria-label="Loading product details"></div>
           </div>
         </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer__row">
+        <div>&copy; <span id="year"></span> Target Food Co. S.A.L</div>
+        <nav>
+          <a href="index.html#home">Home</a>
+          <a href="about.html">About</a>
+          <a href="brands.html">Brands</a>
+          <a href="products.html">Products</a>
+          <a href="contact.html">Contact</a>
+        </nav>
       </div>
-    </div>
-  
-    <!-- Hamburger -->
-    
-    <div class="hamburger_bar trans_400 d-flex flex-row align-items-center justify-content-start">
-      <div class="hamburger">
-        <div class="menu_toggle d-flex flex-row align-items-center justify-content-start">
-          <!-- <span>menu</span> -->
-          <div class="hamburger_container">
-            <div class="menu_hamburger">
-              <div class="line_1 hamburger_lines" style="transform: matrix(1, 0, 0, 1, 0, 0);"></div>
-              <div class="line_2 hamburger_lines" style="visibility: inherit; opacity: 1;"></div>
-              <div class="line_3 hamburger_lines" style="transform: matrix(1, 0, 0, 1, 0, 0);"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  
-    <!-- Menu -->
-  
-    <div class="menu trans_800">
-      <div class="menu_content d-flex flex-column align-items-center justify-content-center text-center">
-        <ul>
-          
-          <li><a href="index.html">home</a></li>
-          <li><a href="about.html">about us</a></li>
-          <li><a href="brands.html">brands</a></li>
-          <li><a href="products.html">products</a></li>
-          <li><a href="contact.html">contact</a></li>
-        </ul>
-      </div>
-  
-    </div>
-
-    <section >
-      <!-- <h2 onclick="goBack()">Back</h2>
-  
-      <script>
-      function goBack() {
-      window.history.back();
-      }
-  </script> -->
-    
-
-  
-  <!--/ Form Search End /-->
-
-  <!--/ Nav Star /-->
-  <!--/ Nav End /-->
-
-  <!--/ Intro Single star /-->
-  <div id="product-details-inner">
-  </div>  
-    
+    </footer>
   </div>
-</div>
-
-	<!-- Footer -->
-
-	<footer class="footer" style="height: 200px; overflow: auto;" >
-		<div  >
-			<div class="row align-items-center" >
-
-				<!-- Footer Logo -->
-				<div class="col-lg-3 footer_col" style="padding-left: 50px;padding-right: 50px;">
-					<div class="footer_logo">
-						<div class="footer_logo_title">Target Food Co. S.A.L</div>
-					
-					</div>
-					<div style="color: white" class="copyright">
-<p style="line-height: 1.2; color: white;font-size: 14px;">Copyright 2024 Target Food Co. S.A.L<br>  all rights reserved</p>
-</div>
-				</div>
-
-				
-			
-				<div class="col-lg-3 footer_col">
-					<div class="footer_contact" >
-						<ul >
-							<li style="margin-bottom: 5px;" class=" align-items-start justify-content-start">
-								
-								<a href="index.html" class="footer_contact_text">Home</a>
-							</li>
-							<li style="margin-bottom: 5px;"class="  align-items-start justify-content-start">
-								
-								<a href="about.html" class="footer_contact_text">About</a>
-							</li>
-							<li style="margin-bottom: 5px;"class="  align-items-start justify-content-start">
-							
-								<a  href="brands.html" class="footer_contact_text">Brands</a>
-							</li>
-							<li style="margin-bottom: 5px;"class=" align-items-start justify-content-start">
-							
-								<a href="products.html" class="footer_contact_text">Products</a>
-							</li>
-							<li style="margin-bottom: 5px;"class=" align-items-start justify-content-start">
-							
-								<a href="contact.html" class="footer_contact_text">Contact</a>
-							</li>
-						</ul>
-					</div>
-				</div>
-				<!-- Footer Contact -->
-				<div class="col-lg-3 footer_col">
-					<div class="footer_contact">
-						<ul>
-							<li style="margin-bottom: 15px;"class="d-flex flex-row align-items-start justify-content-start">
-								<div><div class="footer_contact_title">Address:</div></div>
-								<div class="footer_contact_text">Ain Saadeh ; District of Metn</div>
-							</li>
-							<li style="margin-bottom: 15px;"class="d-flex flex-row align-items-start justify-content-start">
-								<div><div class="footer_contact_title">Number:</div></div>
-								<div class="footer_contact_text">+961 1 901702/3</div>
-							</li>
-							<li style="margin-bottom: 15px;"class="d-flex flex-row align-items-start justify-content-start">
-								<div><div class="footer_contact_title">Email:</div></div>
-								<div class="footer_contact_text">info@targetfoodco.com</div>
-							</li>
-						</ul>
-					</div>
-				</div>
-
-				<div class="col-lg-3 footer_col">
-					<div class="footer_logo_title" style="text-align:center">Follow us</div>
-<br>
-				<div >
-					<div >
-						<ul style="list-style: none; text-align: center; padding-left: 0;">
-							<li style="margin-bottom: 15px;">
-								<a  href="https://www.facebook.com/Targetfood.lb/" ><img src="images/facebook.png" style="width:80px; height:auto;"></a>
-								<a  href="https://www.instagram.com/targetfood.lb/?hl=en"><img src="images/insta.png" style="width:80px; height:auto;"></a>
-								<a  href="https://www.linkedin.com/company/targetfoodco"><img src="images/linkdin.png" style="width:80px; height:auto;"></a>
-							</li>
-							
-						</ul>
-					</div>
-				</div>
-				</div>
-			</div>
-		</div>
-	</footer>
-<a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
-<div id="preloader"></div>
-
-<!-- JavaScript Libraries -->
-<script src="lib/jquery/jquery.min.js"></script>
-<script src="lib/jquery/jquery-migrate.min.js"></script>
-<script src="lib/popper/popper.min.js"></script>
-<script src="lib/bootstrap/js/bootstrap.min.js"></script>
-<script src="lib/easing/easing.min.js"></script>
-<script src="lib/owlcarousel/owl.carousel.min.js"></script>
-<script src="lib/scrollreveal/scrollreveal.min.js"></script>
-<!-- Contact Form JavaScript File -->
-<script src="contactform/contactform.js"></script>
-
-<!-- Template Main Javascript File -->
-<script src="js/main.js"></script>
-<script src="js/productDetails.js"></script>
-
-
+  <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
 </body>
 </html>
-
-
-<!-- was at line 244 -->
-<!-- <div class="col-md-10 offset-md-1">
-  <ul class="nav nav-pills-a nav-pills mb-3 section-t3" id="pills-tab" role="tablist">
-    <li class="nav-item">
-      <a class="nav-link active" id="pills-video-tab" data-toggle="pill" href="#pills-video" role="tab"
-        aria-controls="pills-video" aria-selected="true">Video</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" id="pills-plans-tab" data-toggle="pill" href="#pills-plans" role="tab" aria-controls="pills-plans"
-        aria-selected="false">Floor Plans</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" id="pills-map-tab" data-toggle="pill" href="#pills-map" role="tab" aria-controls="pills-map"
-        aria-selected="false">Ubication</a>
-    </li>
-  </ul>
-  <div class="tab-content" id="pills-tabContent">
-    <div class="tab-pane fade show active" id="pills-video" role="tabpanel" aria-labelledby="pills-video-tab">
-      <iframe src="https://player.vimeo.com/video/73221098" width="100%" height="460" frameborder="0"
-        webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-    </div>
-    <div class="tab-pane fade" id="pills-plans" role="tabpanel" aria-labelledby="pills-plans-tab">
-      <img src="img/plan2.jpg" alt="" class="img-fluid">
-    </div>
-    <div class="tab-pane fade" id="pills-map" role="tabpanel" aria-labelledby="pills-map-tab">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.1422937950147!2d-73.98731968482413!3d40.75889497932681!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25855c6480299%3A0x55194ec5a1ae072e!2sTimes+Square!5e0!3m2!1ses-419!2sve!4v1510329142834"
-        width="100%" height="460" frameborder="0" style="border:0" allowfullscreen></iframe>
-    </div>
-  </div>
-</div>
-<div class="col-md-12">
-  <div class="row section-t3">
-    <div class="col-sm-12">
-      <div class="title-box-d">
-        <h3 class="title-d">Contact Agent</h3>
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-6 col-lg-4">
-      <img src="img/agent-4.jpg" alt="" class="img-fluid">
-    </div>
-    <div class="col-md-6 col-lg-4">
-      <div class="property-agent">
-        <h4 class="title-agent">Anabella Geller</h4>
-        <p class="color-text-a">
-          Nulla porttitor accumsan tincidunt. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet
-          dui. Quisque velit nisi,
-          pretium ut lacinia in, elementum id enim.
-        </p>
-        <ul class="list-unstyled">
-          <li class="d-flex justify-content-between">
-            <strong>Phone:</strong>
-            <span class="color-text-a">(222) 4568932</span>
-          </li>
-          <li class="d-flex justify-content-between">
-            <strong>Mobile:</strong>
-            <span class="color-text-a">777 287 378 737</span>
-          </li>
-          <li class="d-flex justify-content-between">
-            <strong>Email:</strong>
-            <span class="color-text-a">annabella@example.com</span>
-          </li>
-          <li class="d-flex justify-content-between">
-            <strong>Skype:</strong>
-            <span class="color-text-a">Annabela.ge</span>
-          </li>
-        </ul>
-        <div class="socials-a">
-          <ul class="list-inline">
-            <li class="list-inline-item">
-              <a href="#">
-                <i class="fa fa-facebook" aria-hidden="true"></i>
-              </a>
-            </li>
-            <li class="list-inline-item">
-              <a href="#">
-                <i class="fa fa-twitter" aria-hidden="true"></i>
-              </a>
-            </li>
-            <li class="list-inline-item">
-              <a href="#">
-                <i class="fa fa-instagram" aria-hidden="true"></i>
-              </a>
-            </li>
-            <li class="list-inline-item">
-              <a href="#">
-                <i class="fa fa-pinterest-p" aria-hidden="true"></i>
-              </a>
-            </li>
-            <li class="list-inline-item">
-              <a href="#">
-                <i class="fa fa-dribbble" aria-hidden="true"></i>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-12 col-lg-4">
-      <div class="property-contact">
-        <form class="form-a">
-          <div class="row">
-            <div class="col-md-12 mb-1">
-              <div class="form-group">
-                <input type="text" class="form-control form-control-lg form-control-a" id="inputName"
-                  placeholder="Name *" required>
-              </div>
-            </div>
-            <div class="col-md-12 mb-1">
-              <div class="form-group">
-                <input type="email" class="form-control form-control-lg form-control-a" id="inputEmail1"
-                  placeholder="Email *" required>
-              </div>
-            </div>
-            <div class="col-md-12 mb-1">
-              <div class="form-group">
-                <textarea id="textMessage" class="form-control" placeholder="Comment *" name="message" cols="45"
-                  rows="8" required></textarea>
-              </div>
-            </div>
-            <div class="col-md-12">
-              <button type="submit" class="btn btn-a">Send Message</button>
-            </div>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
-</div>
-</section> -->
-<!--/ Property Single End /-->
-
-<!--/ footer Star /-->
-<!-- <section class="section-footer">
-<div class="container">
-<div class="row">
-<div class="col-sm-12 col-md-4">
-  <div class="widget-a">
-    <div class="w-header-a">
-      <h3 class="w-title-a text-brand">EstateAgency</h3>
-    </div>
-    <div class="w-body-a">
-      <p class="w-text-a color-text-a">
-        Enim minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip exea commodo consequat duis
-        sed aute irure.
-      </p>
-    </div>
-    <div class="w-footer-a">
-      <ul class="list-unstyled">
-        <li class="color-a">
-          <span class="color-text-a">Phone .</span> contact@example.com</li>
-        <li class="color-a">
-          <span class="color-text-a">Email .</span> +54 356 945234</li>
-      </ul>
-    </div>
-  </div>
-</div>
-<div class="col-sm-12 col-md-4 section-md-t3">
-  <div class="widget-a">
-    <div class="w-header-a">
-      <h3 class="w-title-a text-brand">The Company</h3>
-    </div>
-    <div class="w-body-a">
-      <div class="w-body-a">
-        <ul class="list-unstyled">
-          <li class="item-list-a">
-            <i class="fa fa-angle-right"></i> <a href="#">Site Map</a>
-          </li>
-          <li class="item-list-a">
-            <i class="fa fa-angle-right"></i> <a href="#">Legal</a>
-          </li>
-          <li class="item-list-a">
-            <i class="fa fa-angle-right"></i> <a href="#">Agent Admin</a>
-          </li>
-          <li class="item-list-a">
-            <i class="fa fa-angle-right"></i> <a href="#">Careers</a>
-          </li>
-          <li class="item-list-a">
-            <i class="fa fa-angle-right"></i> <a href="#">Affiliate</a>
-          </li>
-          <li class="item-list-a">
-            <i class="fa fa-angle-right"></i> <a href="#">Privacy Policy</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="col-sm-12 col-md-4 section-md-t3">
-  <div class="widget-a">
-    <div class="w-header-a">
-      <h3 class="w-title-a text-brand">International sites</h3>
-    </div>
-    <div class="w-body-a">
-      <ul class="list-unstyled">
-        <li class="item-list-a">
-          <i class="fa fa-angle-right"></i> <a href="#">Venezuela</a>
-        </li>
-        <li class="item-list-a">
-          <i class="fa fa-angle-right"></i> <a href="#">China</a>
-        </li>
-        <li class="item-list-a">
-          <i class="fa fa-angle-right"></i> <a href="#">Hong Kong</a>
-        </li>
-        <li class="item-list-a">
-          <i class="fa fa-angle-right"></i> <a href="#">Argentina</a>
-        </li>
-        <li class="item-list-a">
-          <i class="fa fa-angle-right"></i> <a href="#">Singapore</a>
-        </li>
-        <li class="item-list-a">
-          <i class="fa fa-angle-right"></i> <a href="#">Philippines</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</div>
-</div>
-</div>
-</section>
-<footer>
-<div class="container">
-<div class="row">
-<div class="col-md-12">
-  <nav class="nav-footer">
-    <ul class="list-inline">
-      <li class="list-inline-item">
-        <a href="#">Home</a>
-      </li>
-      <li class="list-inline-item">
-        <a href="#">About</a>
-      </li>
-      <li class="list-inline-item">
-        <a href="#">Property</a>
-      </li>
-      <li class="list-inline-item">
-        <a href="#">Blog</a>
-      </li>
-      <li class="list-inline-item">
-        <a href="#">Contact</a>
-      </li>
-    </ul>
-  </nav>
-  <div class="socials-a">
-    <ul class="list-inline">
-      <li class="list-inline-item">
-        <a href="#">
-          <i class="fa fa-facebook" aria-hidden="true"></i>
-        </a>
-      </li>
-      <li class="list-inline-item">
-        <a href="#">
-          <i class="fa fa-twitter" aria-hidden="true"></i>
-        </a>
-      </li>
-      <li class="list-inline-item">
-        <a href="#">
-          <i class="fa fa-instagram" aria-hidden="true"></i>
-        </a>
-      </li>
-      <li class="list-inline-item">
-        <a href="#">
-          <i class="fa fa-pinterest-p" aria-hidden="true"></i>
-        </a>
-      </li>
-      <li class="list-inline-item">
-        <a href="#">
-          <i class="fa fa-dribbble" aria-hidden="true"></i>
-        </a>
-      </li>
-    </ul>
-  </div>
-  <div class="copyright-footer">
-    <p class="copyright color-text-a">
-      &copy; Copyright
-      <span class="color-a">EstateAgency</span> All Rights Reserved.
-    </p>
-  </div>
-  <div class="credits">
-   
-      All the links in the footer should remain intact.
-      You can delete the links only if you purchased the pro version.
-      Licensing information: https://bootstrapmade.com/license/
-      Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=EstateAgency
-    -->

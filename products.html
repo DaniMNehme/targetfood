@@ -52,10 +52,18 @@
               <!-- Populated by JS -->
             </ul>
           </div>
+          <div class="product-search" role="search">
+            <label class="product-search__label" for="product-search">Search products</label>
+            <div class="product-search__control">
+              <span class="product-search__icon" aria-hidden="true">⌕</span>
+              <input id="product-search" type="search" placeholder="Search by product, brand, benefit, or category" autocomplete="off">
+              <button id="product-search-clear" class="product-search__clear" type="button">Clear</button>
+            </div>
+          </div>
           <div class="section__header" style="margin-top:24px;">
             <span class="pill">Showing</span>
             <h2 id="category-title">All Products</h2>
-            <p>Click any product to view details.</p>
+            <p id="results-count" aria-live="polite">Loading the catalog…</p>
           </div>
           <div class="loader-container" id="loader">
             <div class="loader"></div>
